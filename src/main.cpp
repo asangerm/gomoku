@@ -3,10 +3,11 @@
 
 const int CELL_SIZE = 40;
 const int OFFSET = 50;
+const int WIN_SIZE = (BOARD_SIZE - 1) * CELL_SIZE + 2 * OFFSET;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(900, 900), "Gomoku");
+    sf::RenderWindow window(sf::VideoMode(WIN_SIZE, WIN_SIZE), "Gomoku");
 
     Game game;
 
@@ -24,8 +25,8 @@ int main()
                 int mouseX = event.mouseButton.x;
                 int mouseY = event.mouseButton.y;
 
-                int x = (mouseX - OFFSET) / CELL_SIZE;
-                int y = (mouseY - OFFSET) / CELL_SIZE;
+                int x = (mouseX - OFFSET + CELL_SIZE / 2) / CELL_SIZE;
+                int y = (mouseY - OFFSET + CELL_SIZE / 2) / CELL_SIZE;
 
                 if (x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE)
 				{
