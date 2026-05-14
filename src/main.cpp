@@ -4,6 +4,7 @@
 const int CELL_SIZE = 40;
 const int OFFSET = 50;
 const int WIN_SIZE = (BOARD_SIZE - 1) * CELL_SIZE + 2 * OFFSET;
+const int STONE_SIZE = 16;
 
 int main()
 {
@@ -68,9 +69,9 @@ int main()
 			{
                 if (game.board.grid[x][y] != EMPTY)
 				{
-                    sf::CircleShape stone(16);
+                    sf::CircleShape stone(STONE_SIZE);
 
-                    stone.setPosition(OFFSET + x * CELL_SIZE - 16, OFFSET + y * CELL_SIZE - 16);
+                    stone.setPosition(OFFSET + x * CELL_SIZE - STONE_SIZE, OFFSET + y * CELL_SIZE - STONE_SIZE);
 
                     if (game.board.grid[x][y] == BLACK)
                         stone.setFillColor(sf::Color::Black);
