@@ -2,7 +2,8 @@ NAME = Gomoku
 
 SRC = src/main.cpp \
       src/Board.cpp \
-      src/Game.cpp
+      src/Game.cpp \
+      src/RuleEngine.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
